@@ -89,13 +89,13 @@
       navLinks.classList.add("is-open");
       navToggle.setAttribute("aria-expanded", "true");
       navScrim.hidden = false;
-      document.body.style.overflow = "hidden";
+      document.documentElement.classList.add("nav-open");
     };
     const closeNav = () => {
       navLinks.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
       navScrim.hidden = true;
-      document.body.style.overflow = "";
+      document.documentElement.classList.remove("nav-open");
     };
     navToggle.addEventListener("click", () =>
       navLinks.classList.contains("is-open") ? closeNav() : openNav()
